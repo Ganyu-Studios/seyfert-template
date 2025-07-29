@@ -104,7 +104,7 @@ import { Command, type CommandContext, Declare } from "seyfert";
 })
 export default class HelloCommand extends Command {
     override async run(ctx: CommandContext) {
-        await ctx.reply({ content: `Hello, ${ctx.author.displayName}! 👋` });
+        await ctx.editOrReply({ content: `Hello, ${ctx.author.displayName}! 👋` });
     }
 }
 ```

@@ -138,7 +138,7 @@ import { Command, type CommandContext, Declare } from "seyfert";
 })
 export default class ExampleCommand extends Command {
     override async run(ctx: CommandContext) {
-        await ctx.reply({ content: "Hello, world!" });
+        await ctx.editOrReply({ content: "Hello, world!" });
     }
 }
 ```
