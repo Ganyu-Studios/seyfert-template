@@ -1,0 +1,154 @@
+name: ❓ Question / Help
+description: Ask a question about using this template
+title: "[Question]: "
+labels: ["question", "help-wanted"]
+assignees:
+  - EvilG-MC
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in the Seyfert Bot Template! 🤔
+        
+        Please search existing issues and discussions before asking a question to see if it has already been answered.
+
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: Question Type
+      description: What type of question is this?
+      options:
+        - "Setup/Installation help"
+        - "Usage question"
+        - "Configuration help"
+        - "Best practices"
+        - "Troubleshooting"
+        - "Seyfert framework question"
+        - "TypeScript help"
+        - "Discord bot development"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: I'm trying to understand how to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide any relevant context about what you're trying to achieve
+      placeholder: I'm working on a Discord bot that...
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-tried
+    attributes:
+      label: What have you tried?
+      description: Describe what you've already attempted
+      placeholder: I tried following the documentation but...
+    validations:
+      required: false
+
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Relevant Code
+      description: If applicable, share the code you're working with
+      render: typescript
+      placeholder: |
+        // Your code here
+    validations:
+      required: false
+
+  - type: textarea
+    id: error-output
+    attributes:
+      label: Error Output
+      description: If you're getting errors, please paste them here
+      render: shell
+      placeholder: Error messages or logs...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: experience-level
+    attributes:
+      label: Experience Level
+      description: How would you describe your experience with Discord bot development?
+      options:
+        - "Beginner - New to Discord bot development"
+        - "Intermediate - Some experience with Discord bots"
+        - "Advanced - Experienced with Discord bots"
+        - "Expert - Very experienced developer"
+    validations:
+      required: false
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js Version
+      description: What version of Node.js are you using?
+      placeholder: "e.g., 20.0.0"
+    validations:
+      required: false
+
+  - type: input
+    id: seyfert-version
+    attributes:
+      label: Seyfert Version
+      description: What version of Seyfert are you using?
+      placeholder: "e.g., 2.0.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - "Windows"
+        - "macOS"
+        - "Linux"
+        - "Other"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other information that might be helpful
+      placeholder: Anything else that might help us understand your question...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: searched
+    attributes:
+      label: Before asking
+      description: Please confirm you've done the following
+      options:
+        - label: I searched existing issues and discussions
+          required: true
+        - label: I read the README.md file
+          required: true
+        - label: I checked the Seyfert documentation
+          required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

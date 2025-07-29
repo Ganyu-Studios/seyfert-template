@@ -1,0 +1,111 @@
+name: 📚 Documentation Issue
+description: Report an issue with documentation
+title: "[Docs]: "
+labels: ["documentation", "needs-review"]
+assignees:
+  - EvilG-MC
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve our documentation! 📖
+        
+        Please be as specific as possible about what documentation needs improvement.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation issue is this?
+      options:
+        - "README.md"
+        - "Code comments"
+        - "API documentation"
+        - "Setup/Installation guide"
+        - "Examples/Tutorials"
+        - "Configuration guide"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of documentation issue is this?
+      options:
+        - "Missing information"
+        - "Incorrect information"
+        - "Outdated information"
+        - "Unclear/confusing explanation"
+        - "Typo/Grammar error"
+        - "Broken link"
+        - "Missing example"
+        - "Other"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Where is this documentation issue located?
+      placeholder: "e.g., README.md line 45, src/commands/ping.ts, etc."
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content
+      description: What does the current documentation say? (Copy and paste the problematic section)
+      render: markdown
+      placeholder: Current documentation content...
+    validations:
+      required: false
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Issue Description
+      description: Describe what's wrong with the current documentation
+      placeholder: The current documentation is confusing because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Improvement
+      description: How should the documentation be improved?
+      render: markdown
+      placeholder: The documentation should say...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the documentation issue here.
+      placeholder: Any additional information...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be willing to help fix this documentation issue?
+      options:
+        - label: I'm willing to submit a PR to fix this documentation
+          required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

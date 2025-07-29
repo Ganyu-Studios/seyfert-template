@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🚀 Seyfert Documentation
+    url: https://seyfert.dev/
+    about: Official Seyfert framework documentation
+  - name: 💬 Discord.js Guide
+    url: https://discordjs.guide/
+    about: Comprehensive guide for Discord bot development
+  - name: 📖 Discord Developer Portal
+    url: https://discord.com/developers/docs
+    about: Official Discord API documentation
+  - name: 💡 GitHub Discussions
+    url: https://github.com/Ganyu-Studios/seyfert-template/discussions
+    about: Community discussions and general questions
