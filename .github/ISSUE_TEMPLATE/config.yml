@@ -6,6 +6,3 @@ contact_links:
   - name: 📖 Discord Developer Portal
     url: https://discord.com/developers/docs
     about: Official Discord API documentation
-  - name: 💡 GitHub Discussions
-    url: https://github.com/Ganyu-Studios/seyfert-template/discussions
-    about: Community discussions and general questions

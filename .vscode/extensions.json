@@ -9,7 +9,6 @@
 		"usernamehw.errorlens",
 		"YoavBls.pretty-ts-errors",
 		"christian-kohler.path-intellisense",
-		"Prisma.prisma"
 		
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
