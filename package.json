@@ -6,7 +6,7 @@
     "author": "Ganyu Studios",
     "type": "module",
     "license": "MIT",
-    "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
+    "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
     "scripts": {
         "build": "tsc",
         "test": "tsx ./src/index.ts --debug --dev",
@@ -42,17 +42,17 @@
         "framework"
     ],
     "dependencies": {
-        "dotenv": "^17.3.1",
-        "seyfert": "4.2.3-dev-22939270682.0",
+        "dotenv": "^17.4.2",
+        "seyfert": "4.3.0",
         "yunaforseyfert": "^1.1.3"
     },
     "devDependencies": {
-        "@biomejs/biome": "^2.4.7",
-        "@types/node": "^25.5.0",
+        "@biomejs/biome": "^2.4.11",
+        "@types/node": "^25.6.0",
         "husky": "^9.1.7",
         "lint-staged": "^16.4.0",
         "tsx": "^4.21.0",
-        "typescript": "^5.9.3"
+        "typescript": "^6.0.2"
     },
     "pnpm": {
         "onlyBuiltDependencies": [
