@@ -43,7 +43,7 @@
     ],
     "dependencies": {
         "dotenv": "^17.4.2",
-        "seyfert": "4.4.1",
+        "seyfert": "5.0.1-dev-28545549375.0",
         "yunaforseyfert": "^1.1.3"
     },
     "devDependencies": {

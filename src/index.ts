@@ -4,6 +4,8 @@ import { Client, type ParseClient, type UsingClient } from "seyfert";
 import { HandleCommand } from "seyfert/lib/commands/handle.js";
 import { Yuna } from "yunaforseyfert";
 
+import * as middlewares from "./middlewares/index.js";
+
 /**
  * Indicates whether the bot is running in debug mode.
  * @type {boolean}
@@ -17,6 +19,7 @@ const isDebug: boolean = process.argv.includes("--debug");
  * @type {Client<true> & UsingClient}
  */
 const client: Client<true> & UsingClient = new Client({
+    globalMiddlewares: ["loggerMiddleware"],
     allowedMentions: {
         parse: ["users", "roles"],
         replied_user: false,
@@ -34,6 +37,7 @@ const client: Client<true> & UsingClient = new Client({
 // Set services for the client.
 // This needs to be done before the client starts.
 client.setServices({
+    middlewares,
     handleCommand: class extends HandleCommand {
         override argsParser = Yuna.parser({
             logResult: isDebug,
@@ -46,5 +50,8 @@ await client.start();
 
 // Module augmentation to extend the UsingClient interface
 declare module "seyfert" {
-    interface UsingClient extends ParseClient<Client<true>> {}
+    interface SeyfertRegistry {
+        client: ParseClient<Client<true>>;
+        middlewares: typeof middlewares;
+    }
 }
