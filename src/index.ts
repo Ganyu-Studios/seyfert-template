@@ -1,24 +1,14 @@
 import "dotenv/config";
 
-import { Client, type ParseClient, type UsingClient } from "seyfert";
-import { HandleCommand } from "seyfert/lib/commands/handle.js";
-import { Yuna } from "yunaforseyfert";
+import { Client, type ParseClient } from "seyfert";
 
 import * as middlewares from "./middlewares/index.js";
 
 /**
- * Indicates whether the bot is running in debug mode.
- * @type {boolean}
- * @description Use the `--debug` flag to enable debug mode, which provides additional logging and debugging information.
- */
-const isDebug: boolean = process.argv.includes("--debug");
-
-/**
  * Create the client instance.
  * This is the entry point of the application.
- * @type {Client<true> & UsingClient}
  */
-const client: Client<true> & UsingClient = new Client({
+const client = new Client({
     globalMiddlewares: ["loggerMiddleware"],
     allowedMentions: {
         parse: ["users", "roles"],
@@ -28,22 +18,13 @@ const client: Client<true> & UsingClient = new Client({
         // Override the default deferReply method to provide a custom response.
         deferReplyResponse: ({ client }) => ({ content: `**${client.me.username}** is thinking...` }),
         // Set the default prefixes for text commands.
-        prefix: () => ["!", "?", ">>"],
+        prefix: (): string[] => ["!", "?", ">>"],
         // The bot will respond with replies instead of sending messages directly.
-        reply: () => true,
+        reply: (): boolean => true,
     },
 });
 
-// Set services for the client.
-// This needs to be done before the client starts.
-client.setServices({
-    middlewares,
-    handleCommand: class extends HandleCommand {
-        override argsParser = Yuna.parser({
-            logResult: isDebug,
-        });
-    },
-});
+client.setServices({ middlewares });
 
 // Initialize the client and connect to discord.
 await client.start();
